@@ -2,6 +2,32 @@
 <html lang="en">
     <head></head>
     <body>
-        <h1>Proposed supplemental payment cuts to hospitals by the Florida House, Senate and Governor's office.</h1>
+        <h1>Proposed supplemental payment cuts to hospitals from the Florida House, Senate and Governor's office</h1>
+        <table border = 1 cellpadding=7>
+        	<tr>
+        		<th>Medicaid Id</th>
+        		<th>Hospital Name</th>
+        		<th>County</th>
+        		<th>USA Today Florida Coverage Area?</th>
+        		<th>Hospital Type</th>
+        		<th>Hospital System Owner</th>
+        		<th>Proposed Senate Budget Cuts</th>
+        		<th>Proposed House Budget Cuts</th>
+        		<th>Proposed Governor Cuts</th>
+        	</tr>
+        	{% for obj in object_list %}
+        	<tr>
+        		<td>{{ obj.senate_budget_medicaid_id }}</td>
+        		<td>{{ obj.senate_budget_hospital }}</td>
+        		<td>{{ obj.safety_county }}</td>
+        		<td>{{ obj.gannett }}</td>
+        		<td>{{ obj.safety_hosptial_type }}</td>
+        		<td>{{ obj.safety_total_ownership }}</td>
+        		<td>{{ obj.senate_savings }}</td>
+        		<td>{{ obj.house_add_on_savings }}</td>
+        		<td>{{ obj.gov_savings }}</td>
+        	</tr>
+        	{% endfor %}
+        	</table>
     </body>
 </html>
